@@ -1,0 +1,130 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.container {
+  display: flex;
+}
+body {
+  background-color: #e5e6da;
+  text-align: center;
+}
+#wrapper {
+  background-color: #e5e6da;
+}
+header {
+  float: none; /* Ensure it doesn't float */
+  display: block; /* Default block behavior */
+  width: 100%; /* Take up the full width of the container */
+  margin: 0; /* Reset any unwanted margins */
+  padding: 0; /* Reset any unwanted padding */;
+}
+header a {
+  text-decoration: none;
+}
+header a:link,
+header a:visited {
+  color: #482606;
+}
+header a:hover {
+  color: #fafaf4;
+}
+nav ul {
+  font-size: 1.2em;
+  list-style-type: none;
+  margin: 0;
+  padding-left: 0;
+  text-decoration: none;
+}
+nav li {
+  border-bottom: 1px solid #482606;
+}
+nav a:active,
+nav a:link,
+nav a:hover,
+nav a:visited {
+  text-decoration: none;
+}
+nav a:link {
+  color: #482606;
+}
+nav a:visited {
+  color: #482606;
+}
+nav a:hover {
+  color: #fafaf4;
+}
+main {
+    background-color: #e5e6da;
+    padding: 1px 50px 50px 30px;
+    display: block;
+    overflow: auto;
+}
+h2 {
+    color: #482606;
+    text-align: left;
+}
+p {
+    text-align: left;
+}
+footer {
+    background-color: #e5e6da;
+    font-size: 75%;
+    font-weight: bold;
+    padding: 2em;
+    text-align: center;
+}
+#homehero {
+    background-image: url(images/oneishagrant.jpg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    height: 500px;
+}
+ul{
+  list-style-type: circle;
+  text-align: left;
+}
+@media (min-width: 0px) {
+  #wrapper {
+    margin: auto;
+    width: 80%;
+    border: 1px solid #482606;
+    box-shadow: 3px 3px 3px #482606;
+  }
+  nav {
+    text-align: left;
+    padding-left: 1em;
+  }
+  @supports (display: grid) {
+    nav li {
+      display: flex;
+      padding-top: 1em;
+    }
+    .hero {
+      grid-area: hero;
+    }
+    header {
+      grid-area: header;
+    }
+    nav {
+      grid-area: nav;
+    }
+    main {
+      grid-area: main;
+    }
+    footer {
+      grid-area: footer;
+    }
+    #wrapper {
+      display: grid;
+      grid-template:
+        "header header"
+        "nav hero"
+        "nav main"
+        "nav footer"
+        / 180px 1fr;
+    }
+  }
+}
